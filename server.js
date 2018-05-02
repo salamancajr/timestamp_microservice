@@ -32,18 +32,19 @@ app.get(reg, (req, res) => {
     })
   }
 
-  date2 = date2.replace(/^[0]*1([-,]|%\d{2})|jan[a-z]*/gi, "January")
-    .replace(/^[0]*2([-,]|%\d{2})|feb[a-z]*/gi, "February")
-    .replace(/^[0]*3([-,]|%\d{2})|mar[a-z]*/gi, "March")
-    .replace(/^[0]*4([-,]|%\d{2})|apr[a-z]*/gi, "April")
-    .replace(/^[0]*5([-,]|%\d{2})|may[a-z]*/gi, "May")
-    .replace(/^[0]*6([-,]|%\d{2})|jun[a-z]*/gi, "June")
-    .replace(/^[0]*7([-,]|%\d{2})|jul[a-z]*/gi, "July")
-    .replace(/^[0]*8([-,]|%\d{2})|aug[a-z]*/gi, "August")
-    .replace(/^[0]*9([-,]|%\d{2})|sep[a-z]*/gi, "September")
-    .replace(/^10([-,]|%\d{2})|oct[a-z]*/gi, "October")
-    .replace(/^11([-,]|%\d{2})|nov[a-z]*/gi, "November")
-    .replace(/^12([-,]|%\d{2})|dec[a-z]*/gi, "December")
+  date2 = date2
+    .replace(/^[0]*1([-,]|%\d{2})+(?=[0-9])|jan[a-z]*/gi, "January")
+    .replace(/^[0]*2([-,]|%\d{2})+(?=[0-9])|feb[a-z]*/gi, "February")
+    .replace(/^[0]*3([-,]|%\d{2})+(?=[0-9])|mar[a-z]*/gi, "March")
+    .replace(/^[0]*4([-,]|%\d{2})+(?=[0-9])|apr[a-z]*/gi, "April")
+    .replace(/^[0]*5([-,]|%\d{2})+(?=[0-9])|may[a-z]*/gi, "May")
+    .replace(/^[0]*6([-,]|%\d{2})+(?=[0-9])|jun[a-z]*/gi, "June")
+    .replace(/^[0]*7([-,]|%\d{2})+(?=[0-9])|jul[a-z]*/gi, "July")
+    .replace(/^[0]*8([-,]|%\d{2})+(?=[0-9])|aug[a-z]*/gi, "August")
+    .replace(/^[0]*9([-,]|%\d{2})+(?=[0-9])|sep[a-z]*/gi, "September")
+    .replace(/^10([-,]|%\d{2})+(?=[0-9])|oct[a-z]*/gi, "October")
+    .replace(/^11([-,]|%\d{2})+(?=[0-9])|nov[a-z]*/gi, "November")
+    .replace(/^12([-,]|%\d{2})+(?=[0-9])|dec[a-z]*/gi, "December")
     .replace(/[-]/g, "")
     .replace(/[,]/g, "")
     .replace(/%\d{2}/g, "")
@@ -70,12 +71,6 @@ app.get(reg, (req, res) => {
       "natural": yes
     })
   }
-
-
-  // var c = date3.parseDay(525278000000)  
-  // var b = new Date(1421038800000); 
-  //  var a =unixTime(new Date(yes))            // => (Jan 1 1970 15:14:05 GMT-0800)
-  //   res.send({"unix": a,  "natural":yes, test:c})
 })
 app.get("/" + !reg, (req, res) => {
   res.send({
