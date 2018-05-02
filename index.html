@@ -1,12 +1,13 @@
+
 <body>
     
-    <div style="width:60%;height:80%;background-color:cornsilk;position:absolute; top:0; bottom:0; left:0;right:0;margin:auto;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
+    <div style="overflow:scroll;width:60%;height:80%;background-color:cornsilk;position:absolute; top:0; bottom:0; left:0;right:0;margin:auto;    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">
       <h1 style="text-align:center">
         Time Stamp Micro-Service
       </h1>
    
 
-    <main style="width:90%; margin:auto">
+    <main style="width:90%; margin:auto;">
       <p class="bold">Hello!</p>
       <p>Add a date to the end of the web address to get the Unix timestamp and 
         the natural language form of that date.<br><br>
@@ -20,9 +21,26 @@
         natural: "May 5, 2018"
         }</a> 
     </p>
+    <br>
+    Or just add it into the field below:
+    <br>
+    <input id="input"type="text">
+    <button id="button"style="width:60px">Submit</button>
     </main>
   </div>
      
  
+  
+  <script>
+
+
+   
+  var btn = document.getElementById("button")
+  
+  btn.addEventListener("click", function(){
+    var val = document.getElementById("input").value;
+    window.open(`https://limitless-plains-60047.herokuapp.com/${val}`)
+  })
+  </script>
   </body>
 </html>
