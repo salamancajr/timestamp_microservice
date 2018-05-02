@@ -10,6 +10,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.3"
+    "date-and-time": "^0.6.2",
+    "express": "^4.16.3",
+    "unix-date": "0.0.2",
+    "unix-time": "^1.0.1"
   }
 }
