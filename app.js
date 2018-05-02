@@ -70,4 +70,4 @@ app.get("/"+!reg, (req, res)=>{
     res.send({error:"error"})
 })
 
-app.listen(3000, ()=>{`Running app.js in ${port}`})
+app.listen(port, ()=>{`Running app.js in ${port}`})
